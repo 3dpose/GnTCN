@@ -1,5 +1,6 @@
 # GnTCN
-Graph and Temporal Convolutional Networks for 3D Multi-person Pose Estimation in Monocular Videos
+
+[Graph and Temporal Convolutional Networks for 3D Multi-person Pose Estimation in Monocular Videos](https://arxiv.org/pdf/2012.11806.pdf)
 
 This repository contains the code and models for the following paper. 
 
