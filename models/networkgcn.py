@@ -8,9 +8,6 @@ import torch.nn.init as init
 class PropLayer(M.Model):
 	def initialize(self, outdim, usebias=True):
 		self.outdim = outdim
-		# self.bn = M.BatchNorm()
-		# self.act = torch.nn.PReLU(num_parameters=outdim)
-		# self.act2 = torch.nn.PReLU(num_parameters=outdim)
 		self.act = torch.nn.ReLU()
 		self.act2 = torch.nn.ReLU()
 		self.usebias = usebias
@@ -61,17 +58,9 @@ class TransNet(M.Model):
 		self.c1 = PropLayer(outdim)
 		self.c2 = PropLayer(outdim)
 		self.c3 = PropLayer(outdim)
-		# self.c4 = PropLayer(outdim)
-		# self.c5 = PropLayer(outdim)
-		# self.c6 = PropLayer(outdim)
-		# self.c7 = PropLayer(outdim)
 
 		self.b2 = PropLayer(outdim)
 		self.b3 = PropLayer(outdim)
-		# self.b4 = PropLayer(outdim)
-		# self.b5 = PropLayer(outdim)
-		# self.b6 = PropLayer(outdim)
-		# self.b7 = PropLayer(outdim)
 
 		self.c8 = PropLayer(outdim)
 		self.c9 = PropLayer(3)
@@ -80,18 +69,10 @@ class TransNet(M.Model):
 		x = feat = self.c1(x)
 		x = self.c2(x, aff)
 		x = self.c3(x, aff)
-		# x = self.c4(x, aff)
-		# x = self.c5(x, aff)
-		# x = self.c6(x, aff)
-		# x = self.c7(x, aff)
 
 		feat = torch.einsum('ijk,lj->ilk', feat, inc)
 		feat = self.b2(feat, aff_bone)
 		feat = self.b3(feat, aff_bone)
-		# feat = self.b4(feat, aff_bone)
-		# feat = self.b5(feat, aff_bone)
-		# feat = self.b6(feat, aff_bone)
-		# feat = self.b7(feat, aff_bone)
 		feat = torch.einsum('ijk,lj->ilk', feat, inc_inv)
 		x = torch.cat([x, feat], dim=-1)
 		
