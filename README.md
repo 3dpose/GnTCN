@@ -6,6 +6,7 @@
 
 Install the latest version of pytorch. (This repo is tested on pytorch 1.3 - 1.7)
 
+Install torchsul
 ```
 pip install --upgrade torchsul 
 ```
