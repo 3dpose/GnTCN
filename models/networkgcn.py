@@ -81,13 +81,3 @@ class TransNet(M.Model):
 		# print(x.shape)
 		x = x.reshape(-1, self.num_pts, 3)
 		return x 
-
-class Dumb(M.Model):
-	def initialize(self, dim):
-		self.c1 = M.Dense(2)
-	def forward(self, x, a):
-		pts = x.shape[1]
-		x = x.view(-1, 2)
-		x = self.c1(x)
-		x = x.view(-1, pts, 2)
-		return x 
