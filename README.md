@@ -1,6 +1,12 @@
 # GnTCN
 
-[Graph and Temporal Convolutional Networks for 3D Multi-person Pose Estimation in Monocular Videos](https://arxiv.org/pdf/2012.11806.pdf)
+## Introduction
+
+This repository contains the code and models for the following paper. 
+
+> [Graph and Temporal Convolutional Networks for 3D Multi-person Pose Estimation in Monocular Videos](https://arxiv.org/pdf/2012.11806.pdf)  
+> Cheng Yu, Bo Wang, Bo Yang, Robby T. Tan  
+> AAAI Conference on Artificial Intelligence, AAAI 2021.
 
 ## Installation
 
@@ -27,7 +33,7 @@ pip install tqdm
 
 ## Pre-trained Model
 
-Download the necessary files [here](https://www.dropbox.com/s/3ml0s7wfz57z3oq/tgcn_data.zip?dl=0), and unzip to this project's directory.
+Download the pre-trained model files [here](https://www.dropbox.com/s/3ml0s7wfz57z3oq/tgcn_data.zip?dl=0), and unzip to this project's directory.
 
 ## Usage
 
@@ -45,8 +51,12 @@ python eval_gt_h36m_cpu.py
 
 ## Citation
 
-This repository contains the code and models for the following paper. 
-
-> Graph and Temporal Convolutional Networks for 3D Multi-person Pose Estimation in Monocular Videos  
-> Cheng Yu, Bo Wang, Bo Yang, Robby T. Tan  
-> AAAI Conference on Artificial Intelligence, AAAI 2021.
+If this work is useful for your research, please cite our paper. 
+```
+@article{cheng2020graph,
+  title={Graph and Temporal Convolutional Networks for 3D Multi-person Pose Estimation in Monocular Videos},
+  author={Cheng, Yu and Wang, Bo and Yang, Bo and Tan, Robby T},
+  journal={AAAI},
+  year={2021}
+}
+```
