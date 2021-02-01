@@ -8,6 +8,8 @@ This repository contains the code and models for the following paper.
 > Cheng Yu, Bo Wang, Bo Yang, Robby T. Tan  
 > AAAI Conference on Artificial Intelligence, AAAI 2021.
 
+<p align="center"><img src="Results_on_wild_videos.png" width="86%" alt="" /></p>
+
 ## Installation
 
 ### Dependencies
