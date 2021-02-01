@@ -19,7 +19,7 @@ Create an enviroment.
 conda create -n gntcn python=3.6
 conda activate gntcn
 ```
-Install the latest version of pytorch (tested on pytorch 1.3 - 1.7) based on your OS and GPU driver installed follow [install pytorch](https://pytorch.org/). For example, command to use on Linux with CUDA 11.0 is like:
+Install the latest version of pytorch (tested on pytorch 1.3 - 1.7) based on your OS and GPU driver installed following [install pytorch](https://pytorch.org/). For example, command to use on Linux with CUDA 11.0 is like:
 ```
 conda install pytorch torchvision cudatoolkit=11.0 -c pytorch
 ```
