@@ -39,7 +39,9 @@ Download the pre-trained model files [here](https://www.dropbox.com/s/3ml0s7wfz5
 
 ## Usage
 
-#### Run evaluation on Human3.6M dataset
+#### Run evaluation on Human3.6M dataset with 2D Ground-truth as input
+
+As 2D joint estimator is not included in this repo, the following evaluation code takes 2D Ground-truth joints as input to simulate the situation when there is no error in 2D estimator, how GnTCN performs. Please note the MPJPE value from this evaluation is lower than the one reported in Table 5 because 2D estimotor was used for the results in Table 5. 
 
 If GPU is available and pytorch is installed successfully, the GPU evaluation code can be used,
 ```
