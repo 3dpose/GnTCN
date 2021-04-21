@@ -41,7 +41,7 @@ pip install tqdm
 
 ## Pre-trained Model
 
-Download the pre-trained model files [here](https://www.dropbox.com/s/3ml0s7wfz57z3oq/tgcn_data.zip?dl=0), and unzip to this project's directory.
+Download the pre-trained model and processed human keypoint files (H36M and MuPoTS) [here](https://www.dropbox.com/s/3ml0s7wfz57z3oq/tgcn_data.zip?dl=0), and unzip to this project's directory.
 
 ## Usage
 
@@ -57,6 +57,14 @@ python eval_gt_h36m.py
 If GPU is not available or pytorch is not successfully installed, the CPU evaluation code can be used,
 ```
 python eval_gt_h36m_cpu.py
+```
+
+#### Run evaluation on MuPoTS dataset with 2D Ground-truth as input 
+
+The 2D points are included in the data package. To evaluate with GPU:
+```
+python calculate_mupots.py
+python eval_mupots.py
 ```
 
 ## Citation
