@@ -1,9 +1,7 @@
 # GnTCN
-
+[![arXiv](https://img.shields.io/badge/arXiv-2012.11806v3-00ff00.svg)](https://arxiv.org/pdf/2012.11806v3.pdf)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/graph-and-temporal-convolutional-networks-for/3d-multi-person-pose-estimation-absolute-on)](https://paperswithcode.com/sota/3d-multi-person-pose-estimation-absolute-on?p=graph-and-temporal-convolutional-networks-for)
-
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/graph-and-temporal-convolutional-networks-for/3d-multi-person-pose-estimation-root-relative)](https://paperswithcode.com/sota/3d-multi-person-pose-estimation-root-relative?p=graph-and-temporal-convolutional-networks-for)
-
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/graph-and-temporal-convolutional-networks-for/root-joint-localization-on-human3-6m)](https://paperswithcode.com/sota/root-joint-localization-on-human3-6m?p=graph-and-temporal-convolutional-networks-for)
 
 ## Introduction
