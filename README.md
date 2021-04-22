@@ -30,11 +30,12 @@ Install the latest version of pytorch (tested on pytorch 1.3 - 1.7) based on you
 conda install pytorch torchvision cudatoolkit=11.0 -c pytorch
 ```
 
-Install opencv-python, torchsul, and tqdm
+Install opencv-python, torchsul, tqdm, and scipy to run the evaluation code
 ```
 pip install opencv-python
 pip install --upgrade torchsul 
 pip install tqdm
+pip install scipy
 ```
 
 ## Pre-trained Model
