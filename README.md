@@ -65,6 +65,8 @@ The 2D points are included in the data package. To evaluate with GPU:
 python calculate_mupots.py
 python eval_mupots.py
 ```
+Note that MuPoTS dataset is needed to run `python eval_mupots.py`, which is available on the [MuPoTS dataset website](http://gvv.mpi-inf.mpg.de/projects/SingleShotMultiPerson/) (download the mupots-3d-eval.zip file, unzip it, and run `get_mupots-3d.sh` to download the dataset). 
+
 
 ## Citation
 
