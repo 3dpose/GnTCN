@@ -62,11 +62,18 @@ python eval_gt_h36m_cpu.py
 
 The 2D points are included in the data package. To evaluate with GPU:
 ```
-python calculate_mupots.py
+python calculate_mupots_gt.py
 python eval_mupots.py
 ```
 Note that MuPoTS dataset is needed to run `python eval_mupots.py`, which is available on the [MuPoTS dataset website](http://gvv.mpi-inf.mpg.de/projects/SingleShotMultiPerson/) (download the mupots-3d-eval.zip file, unzip it, and run `get_mupots-3d.sh` to download the dataset). 
 
+#### Run evaluation on MuPoTS dataset with 2D detections as input 
+
+The 2D points are included in the data package. To evaluate with GPU:
+```
+python calculate_mupots_detect.py
+python eval_mupots.py
+```
 
 ## Citation
 
