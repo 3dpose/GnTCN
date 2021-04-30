@@ -40,7 +40,8 @@ pip install scipy
 
 ## Pre-trained Model
 
-Download the pre-trained model and processed human keypoint files (H36M and MuPoTS) [here](https://www.dropbox.com/s/havjgrkaozjyb1k/tgcn_data.zip?dl=0), and unzip to this project's directory.
+Download the pre-trained model and processed human keypoint files (H36M and MuPoTS) [here](https://www.dropbox.com/s/havjgrkaozjyb1k/tgcn_data.zip?dl=0), and unzip the downloaded zip file to this project's directory, two folders and one pkl file are expected to see after doing that (i.e., `./ckpts`, `./mupots`, and `points_eval.pkl`).
+
 
 ## Usage
 
