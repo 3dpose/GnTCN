@@ -14,6 +14,11 @@ This repository contains the code and models for the following paper.
 
 <p align="center"><img src="Results_on_wild_videos.png" width="86%" alt="" /></p>
 
+### Updates
+
+- 04/30/2021 evaluation code (PCK metric), pre-trained model, and estimated 2D joints for MuPoTS dataset released
+
+
 ## Installation
 
 ### Dependencies
@@ -45,7 +50,9 @@ Download the pre-trained model and processed human keypoint files (H36M and MuPo
 
 ## Usage
 
-#### Run evaluation on Human3.6M dataset with 2D Ground-truth as input
+### Human3.6M dataset evaluation
+
+#### Run evaluation on Human3.6M dataset with 2D Ground-truth joints as input
 
 As 2D joint estimator is not included in this repo, the following evaluation code takes 2D Ground-truth joints as input to simulate the situation when there is no error in 2D estimator, how GnTCN performs. Please note the MPJPE value from this evaluation is lower than the one reported in Table 5 because 2D estimotor was used for the results in Table 5. 
 
@@ -59,18 +66,21 @@ If GPU is not available or pytorch is not successfully installed, the CPU evalua
 python eval_gt_h36m_cpu.py
 ```
 
-#### Run evaluation on MuPoTS dataset with 2D Ground-truth as input 
+### MuPoTS dataset evaluation
 
-The 2D points are included in the data package. To evaluate with GPU:
+MuPoTS eval set is needed to perform evaluation, which is available on the [MuPoTS dataset website](http://gvv.mpi-inf.mpg.de/projects/SingleShotMultiPerson/) (download the mupots-3d-eval.zip file, unzip it, and run `get_mupots-3d.sh` to download the dataset).
+
+#### Run evaluation on MuPoTS dataset with 2D Ground-truth joints as input 
+
+The Ground-truth 2D joints are included in the data package. To evaluate with GPU:
 ```
 python calculate_mupots_gt.py
 python eval_mupots.py
-```
-Note that MuPoTS dataset is needed to run `python eval_mupots.py`, which is available on the [MuPoTS dataset website](http://gvv.mpi-inf.mpg.de/projects/SingleShotMultiPerson/) (download the mupots-3d-eval.zip file, unzip it, and run `get_mupots-3d.sh` to download the dataset). 
+``` 
 
-#### Run evaluation on MuPoTS dataset with 2D detections as input 
+#### Run evaluation on MuPoTS dataset with estimated 2D joints as input 
 
-The 2D points are included in the data package. To evaluate with GPU:
+The estimated 2D points are included in the data package as well. To evaluate with GPU:
 ```
 python calculate_mupots_detect.py
 python eval_mupots.py
