@@ -34,9 +34,12 @@ class ResBlock1D(M.Model):
 		return res
 
 class Refine2dNet(M.Model):
-	def initialize(self, num_kpts, temp_length):
+	def initialize(self, num_kpts, temp_length, input_dimension=3, output_dimension=3, output_pts=None):
 		self.num_kpts = num_kpts
 		self.temp_length = temp_length
+		self.output_dimension = output_dimension
+		self.output_pts = num_kpts if output_pts is None else output_pts
+		self.input_dimension = input_dimension
 		self.c1 = M.ConvLayer1D(3, 1024, stride=3, activation=M.PARAM_PRELU, pad='VALID', batch_norm=True, usebias=False)
 		self.r1 = ResBlock1D(k=3)
 		self.r2 = ResBlock1D(k=3)
@@ -44,10 +47,10 @@ class Refine2dNet(M.Model):
 		self.r4 = ResBlock1D(k=3)
 		# self.r3 = ResBlock1D(k=3, dilation=3)
 		# self.c5 = M.ConvLayer1D(9, 256, activation=M.PARAM_PRELU, pad='VALID', batch_norm=True, usebias=False)
-		self.c4 = M.ConvLayer1D(1, num_kpts*3)
+		self.c4 = M.ConvLayer1D(1, self.output_pts * self.output_dimension)
 
 	def forward(self, x, drop=True):
-		x = x.view(x.shape[0], x.shape[1], self.num_kpts * 3)
+		x = x.view(x.shape[0], x.shape[1], self.num_kpts * self.input_dimension)
 		x = x.permute(0,2,1)
 		x = self.c1(x)
 		x = self.r1(x)
@@ -58,7 +61,7 @@ class Refine2dNet(M.Model):
 		# x = self.c5(x)
 		x = self.c4(x)
 		x = x.permute(0, 2, 1)
-		x = x.reshape(x.shape[0], x.shape[1], self.num_kpts, 3)
+		x = x.reshape(x.shape[0], x.shape[1], self.output_pts, self.output_dimension)
 		return x 
 
 	def evaluate(self, x):

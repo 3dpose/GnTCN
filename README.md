@@ -80,11 +80,19 @@ python eval_mupots.py
 
 #### Run evaluation on MuPoTS dataset with estimated 2D joints as input 
 
-The estimated 2D points are included in the data package as well. To evaluate with GPU:
+The estimated 2D points are included in the data package as well. To evaluate the person-centered poses:
 ```
 python calculate_mupots_detect.py
 python eval_mupots.py
 ```
+
+To evaluate the poses in camera coordinates (PCK(abs)):
+```
+python calculate_mupots_detect.py
+python calculate_mupots_depth.py
+python eval_mupots_dep.py
+```
+
 
 #### Testing on wild videos
 
