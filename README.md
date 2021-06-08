@@ -60,11 +60,17 @@ If GPU is available and pytorch is installed successfully, the GPU evaluation co
 ```
 python eval_gt_h36m.py
 ```
+After running above command, the following MPJPE value is expected. 
+```
+...
+MPJPE: 0.0180
+```
 
 If GPU is not available or pytorch is not successfully installed, the CPU evaluation code can be used,
 ```
 python eval_gt_h36m_cpu.py
 ```
+Result is the same as the GPU evaluation code. 
 
 ### MuPoTS dataset evaluation
 
@@ -77,6 +83,11 @@ The Ground-truth 2D joints are included in the data package. To evaluate with GP
 python calculate_mupots_gt.py
 python eval_mupots.py
 ``` 
+After running above command, the following PCK (person-centric, pelvis-based origin) value is expected. 
+```
+...
+PCK_MEAN: 0.8985102807603582
+```
 
 #### Run evaluation on MuPoTS dataset with estimated 2D joints as input 
 
@@ -85,6 +96,11 @@ The estimated 2D points are included in the data package as well. To evaluate th
 python calculate_mupots_detect.py
 python eval_mupots.py
 ```
+After running above command, the following PCK (person-centric, pelvis-based origin) value is expected, which matches the number reported in Table 3, PCK 87.5 (percentage) in the paper. 
+```
+...
+PCK_MEAN: 0.8764509703036868
+```
 
 To evaluate the poses in camera coordinates (PCK(abs)):
 ```
@@ -92,7 +108,11 @@ python calculate_mupots_detect.py
 python calculate_mupots_depth.py
 python eval_mupots_dep.py
 ```
-
+After running above command, the following PCK_abs (camera-centric) value is expected, which matches the number reported in Table 3, PCK_abs 45.7 (percentage) in the paper. 
+```
+...
+PCK_MEAN: 0.45785827181758376
+```
 
 #### Testing on wild videos
 
