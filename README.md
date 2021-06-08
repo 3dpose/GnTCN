@@ -57,24 +57,24 @@ MuPoTS eval set is needed to perform evaluation, which is available on the [MuPo
 
 #### Run evaluation on MuPoTS dataset with estimated 2D joints as input 
 
-The estimated 2D points are included in the data package as well. To evaluate the person-centered poses:
+To keep this repository simple and small, 2D pose estimator is not included (HRNet was used as the 2D pose estimator as mentioned in the paper). Therefore, the estimated 2D points are provided in the data package to make it easy to reproduce the results reported in our paper. To evaluate the person-centric 3D human pose estimation:
 ```
 python calculate_mupots_detect.py
 python eval_mupots.py
 ```
-After running above command, the following PCK (person-centric, pelvis-based origin) value is expected, which matches the number reported in Table 3, PCK 87.5 (percentage) in the paper. 
+After running the above code, the following PCK (person-centric, pelvis-based origin) value is expected, which matches the number reported in Table 3, PCK 87.5 (percentage) in the paper. 
 ```
 ...
 PCK_MEAN: 0.8764509703036868
 ```
 
-To evaluate the poses in camera coordinates (PCK(abs)):
+To evaluate camera-centric (i.e., camera coordinates) 3D human pose estimation:
 ```
 python calculate_mupots_detect.py
 python calculate_mupots_depth.py
 python eval_mupots_dep.py
 ```
-After running above command, the following PCK_abs (camera-centric) value is expected, which matches the number reported in Table 3, PCK_abs 45.7 (percentage) in the paper. 
+After running the above code, the following PCK_abs (camera-centric) value is expected, which matches the number reported in Table 3, PCK_abs 45.7 (percentage) in the paper. 
 ```
 ...
 PCK_MEAN: 0.45785827181758376
@@ -87,7 +87,7 @@ The Ground-truth 2D joints are included in the data package as well to demonstra
 python calculate_mupots_gt.py
 python eval_mupots.py
 ``` 
-After running above command, the following PCK (person-centric, pelvis-based origin) value is expected. 
+After running the above code, the following PCK (person-centric, pelvis-based origin) value is expected. 
 ```
 ...
 PCK_MEAN: 0.8985102807603582
@@ -103,7 +103,7 @@ If GPU is available and pytorch is installed successfully, the GPU evaluation co
 ```
 python eval_gt_h36m.py
 ```
-After running above command, the following MPJPE value is expected. 
+After running the above code, the following MPJPE value is expected. 
 ```
 ...
 MPJPE: 0.0180
