@@ -51,28 +51,6 @@ Download the pre-trained model and processed human keypoint files (H36M and MuPo
 
 ## Usage
 
-### Human3.6M dataset evaluation
-
-#### Run evaluation on Human3.6M dataset with 2D Ground-truth joints as input
-
-As 2D joint estimator is not included in this repo, the following evaluation code takes 2D Ground-truth joints as input to simulate the situation when there is no error in 2D estimator, how GnTCN performs. Please note the MPJPE value from this evaluation is lower than the one reported in Table 5 because 2D estimotor was used for the results in Table 5. 
-
-If GPU is available and pytorch is installed successfully, the GPU evaluation code can be used,
-```
-python eval_gt_h36m.py
-```
-After running above command, the following MPJPE value is expected. 
-```
-...
-MPJPE: 0.0180
-```
-
-If GPU is not available or pytorch is not successfully installed, the CPU evaluation code can be used,
-```
-python eval_gt_h36m_cpu.py
-```
-Result is the same as the GPU evaluation code. 
-
 ### MuPoTS dataset evaluation
 
 MuPoTS eval set is needed to perform evaluation, which is available on the [MuPoTS dataset website](http://gvv.mpi-inf.mpg.de/projects/SingleShotMultiPerson/) (download the mupots-3d-eval.zip file, unzip it, and run `get_mupots-3d.sh` to download the dataset).
@@ -114,6 +92,28 @@ After running above command, the following PCK_abs (camera-centric) value is exp
 ...
 PCK_MEAN: 0.45785827181758376
 ```
+
+### Human3.6M dataset evaluation
+
+#### Run evaluation on Human3.6M dataset with 2D Ground-truth joints as input
+
+As 2D joint estimator is not included in this repo, the following evaluation code takes 2D Ground-truth joints as input to simulate the situation when there is no error in 2D estimator, how GnTCN performs. Please note the MPJPE value from this evaluation is lower than the one reported in Table 5 because 2D estimotor was used for the results in Table 5. 
+
+If GPU is available and pytorch is installed successfully, the GPU evaluation code can be used,
+```
+python eval_gt_h36m.py
+```
+After running above command, the following MPJPE value is expected. 
+```
+...
+MPJPE: 0.0180
+```
+
+If GPU is not available or pytorch is not successfully installed, the CPU evaluation code can be used,
+```
+python eval_gt_h36m_cpu.py
+```
+Result is the same as the GPU evaluation code. 
 
 #### Testing on wild videos
 
