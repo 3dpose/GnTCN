@@ -16,7 +16,8 @@ This repository contains the code and models for the following paper.
 
 ### Updates
 
-- 04/30/2021 evaluation code (PCK metric), pre-trained model, and estimated 2D joints for MuPoTS dataset released
+- 06/07/2021 evaluation code (PCK_abs camera-centric) and pre-trained model for MuPoTS dataset tested and released
+- 04/30/2021 evaluation code (PCK person-centric), pre-trained model, and estimated 2D joints for MuPoTS dataset released
 
 
 ## Installation
