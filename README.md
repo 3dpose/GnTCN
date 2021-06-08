@@ -115,7 +115,7 @@ python eval_gt_h36m_cpu.py
 ```
 Result is the same as the GPU evaluation code. 
 
-#### Testing on wild videos
+### Testing on wild videos
 
 Please note that we didn't include 2D pose estimator code in this repository to keep it simple, please use off-the-shelf 2D pose estimation methods to get 2D joints first, and together with the code from this repository to infer 3D human pose on testing videos (the TCN takes multiple frames as input). In particular, as stated in the paper: we use the original implementation of [HRNet](https://github.com/HRNet/HRNet-Human-Pose-Estimation) as the 2D pose estimator and extract PAF from [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose).
 
