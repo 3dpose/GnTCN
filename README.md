@@ -55,19 +55,6 @@ Download the pre-trained model and processed human keypoint files (H36M and MuPo
 
 MuPoTS eval set is needed to perform evaluation, which is available on the [MuPoTS dataset website](http://gvv.mpi-inf.mpg.de/projects/SingleShotMultiPerson/) (download the mupots-3d-eval.zip file, unzip it, and run `get_mupots-3d.sh` to download the dataset).
 
-#### Run evaluation on MuPoTS dataset with 2D Ground-truth joints as input 
-
-The Ground-truth 2D joints are included in the data package. To evaluate with GPU:
-```
-python calculate_mupots_gt.py
-python eval_mupots.py
-``` 
-After running above command, the following PCK (person-centric, pelvis-based origin) value is expected. 
-```
-...
-PCK_MEAN: 0.8985102807603582
-```
-
 #### Run evaluation on MuPoTS dataset with estimated 2D joints as input 
 
 The estimated 2D points are included in the data package as well. To evaluate the person-centered poses:
@@ -93,11 +80,24 @@ After running above command, the following PCK_abs (camera-centric) value is exp
 PCK_MEAN: 0.45785827181758376
 ```
 
+#### Run evaluation on MuPoTS dataset with 2D Ground-truth joints as input 
+
+The Ground-truth 2D joints are included in the data package as well to demonstrate the upper-bound performance of the model, where the 2D ground-truth keypoints are used as input to mimic the situation that there is no error in 2D pose estimation. To evaluate with GPU:
+```
+python calculate_mupots_gt.py
+python eval_mupots.py
+``` 
+After running above command, the following PCK (person-centric, pelvis-based origin) value is expected. 
+```
+...
+PCK_MEAN: 0.8985102807603582
+```
+
 ### Human3.6M dataset evaluation
 
 #### Run evaluation on Human3.6M dataset with 2D Ground-truth joints as input
 
-As 2D joint estimator is not included in this repo, the following evaluation code takes 2D Ground-truth joints as input to simulate the situation when there is no error in 2D estimator, how GnTCN performs. Please note the MPJPE value from this evaluation is lower than the one reported in Table 5 because 2D estimotor was used for the results in Table 5. 
+Similar to the evaluation above where 2D ground-truth keypoints are used for MuPoTS. The following evaluation code takes 2D Ground-truth joints of the Human3.6M as input to simulate the situation when there is no error in 2D pose estimator, how the proposed method performs. Please note the MPJPE value from this evaluation is lower than the one reported in the paper because the result in Table 5 in the paper was calculated based on the estimated 2D keypoints (i.e., with errors) not from ground-truth. 
 
 If GPU is available and pytorch is installed successfully, the GPU evaluation code can be used,
 ```
