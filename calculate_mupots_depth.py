@@ -25,7 +25,7 @@ if not os.path.exists('mupots/pred_dep/'):
 
 results = defaultdict(list)
 gts = defaultdict(list)
-for ptsfile in glob.glob('mupots/est_p2ds/*.pkl'):
+for ptsfile in sorted(glob.glob('mupots/est_p2ds/*.pkl')):
 	ptsfile = ptsfile.replace('\\','/') # for windows 
 	print(ptsfile)
 	p2d, affpts, affb, occmask = pickle.load(open(ptsfile, 'rb'))
