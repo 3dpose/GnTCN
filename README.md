@@ -48,6 +48,19 @@ pip install scipy
 
 Download the pre-trained model and processed human keypoint files (H36M and MuPoTS) [here](https://www.dropbox.com/s/havjgrkaozjyb1k/tgcn_data.zip?dl=0), and unzip the downloaded zip file to this project's directory, two folders and one pkl file are expected to see after doing that (i.e., `./ckpts`, `./mupots`, and `points_eval.pkl`).
 
+### Directory
+Copy the two two folders and the pkl file to the root directory of the project, you should see the following directory structure. 
+```
+${GnTCN_ROOT}
+|-- ckpts
+|-- models
+|-- mupots
+|-- util
+|-- points_eval.pkl
+|-- calculate_mupots_depth.py
+|-- other python code, LICENSE, and README files
+...
+```
 
 ## Usage
 
