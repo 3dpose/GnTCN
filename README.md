@@ -79,6 +79,13 @@ ${GnTCN_ROOT}
 |-- other python code, LICENSE, and README files
 ...
 ```
+#### 3D human pose estimation evaluation on MuPoTS eval set
+
+The following is a snapshot of the Table 3 in the paper, which shows the quantitative evaluation results on MuPoTS-3D. 
+
+<img src="MuPoTS-3D_eval.png" alt="MuPoTS evaluation" width="390"/>
+
+To reproduce the results (PCK and PCK_abs) in above table, please follow the instructions in the next section. 
 
 #### Run evaluation on MuPoTS dataset with estimated 2D joints as input 
 
