@@ -155,10 +155,14 @@ Please note that we didn't include 2D pose estimator code in this repository to 
 
 If this work is useful for your research, please cite our paper. 
 ```
-@article{cheng2020graph,
-  title={Graph and Temporal Convolutional Networks for 3D Multi-person Pose Estimation in Monocular Videos},
-  author={Cheng, Yu and Wang, Bo and Yang, Bo and Tan, Robby T},
-  journal={AAAI},
-  year={2021}
+@article{Cheng_Wang_Yang_Tan_2021,
+  title={Graph and Temporal Convolutional Networks for 3D Multi-person Pose Estimation in Monocular Videos}, 
+  author={Cheng, Yu and Wang, Bo and Yang, Bo and Tan, Robby T.}, 
+  journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
+  year={2021}, 
+  month={May}, 
+  volume={35}, 
+  number={2}, 
+  pages={1157-1165}
 }
 ```
